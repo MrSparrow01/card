@@ -1,0 +1,77 @@
+body, html{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
+body{
+  background-color: #212529;
+}
+.header{
+  background: linear-gradient(#38b0e3, #FFB742);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 7rem;
+  font-family: "Raleway";
+  position: fixed;
+}
+.main{
+  display: flex;
+  height: 60%;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main>div>img{
+  width: 100%;
+}
+.content{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 140%;
+}
+@media screen and (max-width: 1024px) {
+  #img-div{
+    width: 80%;
+    padding: 5rem;
+  }
+  .content img{
+    width: 10em;
+    animation: animate_grow 2s linear infinite;
+  }
+  .header{
+    top: 4rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #img-div{
+    width: 50%;
+    padding: 5rem;
+  }
+  .content img{
+    width: 8.5rem;
+    animation: animate_grow 2s ease infinite;
+  }
+  .header{
+    top: 2rem;
+  }
+}
+.content:hover img{
+  transform: rotateX(10px);
+}
+
+@keyframes animate_grow {
+ 0% {
+   transform: scale3d(1, 1, 1);
+ }
+ 50% {
+   transform: scale3d(1.25, 1.25, 1.25);
+ }
+ 100% {
+   transform: scale3d(1, 1, 1);
+ }
+}
